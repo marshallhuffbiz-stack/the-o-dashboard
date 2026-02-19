@@ -1,0 +1,22 @@
+{
+  "name": "The O Dashboard",
+  "short_name": "The O",
+  "description": "Marketing dashboard and SMS beta workspace for The O.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#ff8a00",
+  "icons": [
+    {
+      "src": "./assets/the-o-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/the-o-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
