@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The O | Marketing Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <div class="layout">
+      <aside class="sidebar reveal">
+        <div class="brand">
+          <img
+            class="brand-logo"
+            src="./assets/the-o-logo.png"
+            alt="The O logo"
+            onerror="this.style.display='none'; document.getElementById('wordmark-fallback').style.display='block';"
+          />
+          <div id="wordmark-fallback" class="wordmark-fallback">the <span>O</span></div>
+          <p class="brand-tag">Nightlife Marketing Suite</p>
+        </div>
+
+        <nav class="nav">
+          <a href="./index.html" class="nav-link active">Dashboard</a>
+          <a href="./sms-beta.html" class="nav-link">SMS Campaign Beta</a>
+        </nav>
+
+        <div class="status-card">
+          <p class="status-title">Campaign Status</p>
+          <p class="status-value">Live Planning</p>
+          <p class="status-note">Primary SMS line pending registration and compliance approval.</p>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar reveal">
+          <div>
+            <p class="eyebrow">Client Workspace</p>
+            <h1>The O Dashboard</h1>
+          </div>
+          <div class="pill">Updated locally in your browser</div>
+        </header>
+
+        <section class="cards">
+          <article class="card reveal">
+            <div class="card-head">
+              <h2>Upcoming Events</h2>
+              <p>Add and track upcoming nights, promotions, and special bookings.</p>
+            </div>
+
+            <form id="eventForm" class="stack-form">
+              <div class="form-row">
+                <label>
+                  Event Name
+                  <input name="title" type="text" placeholder="Neon Fridays" required />
+                </label>
+                <label>
+                  Date
+                  <input name="date" type="date" required />
+                </label>
+              </div>
+              <div class="form-row">
+                <label>
+                  Time
+                  <input name="time" type="text" placeholder="10:00 PM - 2:00 AM" required />
+                </label>
+                <label>
+                  Theme / Promo
+                  <input name="theme" type="text" placeholder="Ladies Night / House DJ" />
+                </label>
+              </div>
+              <label>
+                Notes
+                <textarea name="notes" rows="3" placeholder="Guest list cutoff, special bottle packages, talent notes..."></textarea>
+              </label>
+              <button type="submit" class="btn">Add Event</button>
+            </form>
+
+            <ul id="eventList" class="item-list"></ul>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-head">
+              <h2>Pictures & Flyers</h2>
+              <p>Upload visuals for approval, scheduling, and ad creative prep.</p>
+            </div>
+
+            <label id="mediaDropZone" class="upload-zone" for="mediaInput">
+              <input id="mediaInput" type="file" accept="image/*" multiple />
+              <span>Drop files here or click to upload</span>
+              <small>Supports image uploads from your device (saved locally in this browser).</small>
+            </label>
+
+            <div id="mediaGrid" class="media-grid"></div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-head">
+              <h2>Idea Vault</h2>
+              <p>Capture creative concepts, ad angles, and campaign test ideas.</p>
+            </div>
+
+            <form id="ideaForm" class="stack-form">
+              <div class="form-row">
+                <label>
+                  Idea Title
+                  <input name="title" type="text" placeholder="VIP Birthday Blast" required />
+                </label>
+                <label>
+                  Priority
+                  <select name="priority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                Description
+                <textarea name="description" rows="4" placeholder="Describe audience, offer, channel, and timing..."></textarea>
+              </label>
+              <button type="submit" class="btn">Save Idea</button>
+            </form>
+
+            <ul id="ideaList" class="item-list"></ul>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
